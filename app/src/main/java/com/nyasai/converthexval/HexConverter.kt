@@ -7,7 +7,19 @@ class HexConverter(convertValueStr: String, isSigned: Boolean) : ValueConverter(
      */
     override fun chkConvertText(str: String): Boolean {
         // 有効なデータであるか
-        return (!str.isNullOrEmpty() && str.indexOf("0x",0) != -1 && str.length >=3);
+        if(!str.isNullOrEmpty() && str.indexOf("0x",0) != -1 && str.length >=3)
+        {
+            // 16進数の有効な文字が
+            for (i in 2..(this.mConvertValueStr.length-1)) {
+                var ascii = this.mConvertValueStr[i].toInt();
+                // 0-9か
+                if(ascii < 48 || ascii > 57)
+                    // A-Fか
+                    if(ascii < 65 || ascii > 70)
+                        return false;
+            }
+        }
+        return true;
     }
 
     /**
