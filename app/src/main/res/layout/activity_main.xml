@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nyasai.converthexval.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/etHexValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="0xFF"
+            android:inputType="text"
+            android:maxLength="10"
+            android:textSize="36sp"/>
+
+        <Spinner
+            android:id="@+id/spnSinInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/sin_list"/>
+
+        <Button
+            android:id="@+id/btnHex2Dec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hex2Dec"/>
+
+        <Button
+            android:id="@+id/btnDec2Hex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dec2Hex"/>
+
+        <EditText
+            android:id="@+id/etDecValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="-1"
+            android:inputType="number|numberSigned"
+            android:maxLength="10"
+            android:textSize="36sp"/>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
