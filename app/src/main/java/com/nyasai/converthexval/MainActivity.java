@@ -2,6 +2,7 @@ package com.nyasai.converthexval;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -68,8 +69,11 @@ public class MainActivity extends AppCompatActivity {
         // 結果表示
         if(result.getRslt() == true)
             etRslt.setText(result.getStr());
-        else
-            Toast.makeText(this, "入力値不正", Toast.LENGTH_SHORT).show();
+        else {
+            Toast toast = Toast.makeText(this, "入力値不正", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER,0,0);
+            toast.show();
+        }
     }
 
     /**
