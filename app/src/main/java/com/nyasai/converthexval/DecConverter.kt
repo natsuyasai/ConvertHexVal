@@ -7,7 +7,7 @@ class DecConverter(convertValueStr: String, isSigned: Boolean) : ValueConverter(
      * 変換データ確認
      */
     override fun chkConvertText(str: String): Boolean {
-        return (!str.isNullOrEmpty() && !(str.toLong() > Int.MAX_VALUE) && !(str.toLong() > Int.MIN_VALUE));
+        return (!str.isNullOrEmpty() && (str.toLong() < Int.MAX_VALUE) && (str.toLong() > Int.MIN_VALUE));
     }
 
     /**
