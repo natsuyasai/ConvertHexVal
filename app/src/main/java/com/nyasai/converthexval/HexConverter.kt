@@ -18,8 +18,9 @@ class HexConverter(convertValueStr: String, isSigned: Boolean) : ValueConverter(
                     if(ascii < 65 || ascii > 70)
                         return false;
             }
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**
