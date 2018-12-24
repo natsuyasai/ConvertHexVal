@@ -15,7 +15,7 @@ class DecConverter(convertValueStr: String, isSigned: Boolean) : ValueConverter(
      */
     override fun execConvert(): String {
         // 16進数へ変換
-        var str = Integer.toHexString(this.mConvertValueStr.toInt());
+        var str = this.mConvertValueStr.toInt().toString(16)
         return "0x" + str.toUpperCase();
     }
 }

@@ -20,9 +20,9 @@ class HexConverter(convertValueStr: String, isSigned: Boolean) : ValueConverter(
             cnvStr += this.mConvertValueStr[i];
         }
         // 10進数へ変換
-        var value = Integer.parseInt(cnvStr,16);
+        var value = cnvStr.toLong(16);
         // 符号bit確認
-        var tmpValue = Integer.parseInt(this.mConvertValueStr[2].toString(),16);
+        var tmpValue = this.mConvertValueStr[2].toString().toInt(16);
         var sinBit = tmpValue and 0x08;
         // unsignedかつ符号bitが1のため，変換実施
         if (sinBit != 0 && this.mIsSigned != false) {
@@ -31,7 +31,7 @@ class HexConverter(convertValueStr: String, isSigned: Boolean) : ValueConverter(
             for (i in 2..(this.mConvertValueStr.length-1)){
                 xorHexStr += "F";
             }
-            var xorValue = Integer.parseInt(xorHexStr,16);
+            var xorValue = xorHexStr.toLong(16);
             // 1の補数
             value = value xor xorValue;
             // 1を足す
