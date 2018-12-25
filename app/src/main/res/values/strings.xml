@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ConvertHexVal</string>
     <string-array name="sin_list">
-        <item>unsigned</item>
         <item>signed</item>
+        <item>unsigned</item>
     </string-array>
 </resources>
