@@ -2,6 +2,7 @@ package com.nyasai.converthexval;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -14,6 +15,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 入力時にIMEを表示させない
+        //EditText etHexValue = findViewById(R.id.etHexValue);
+        //etHexValue.setRawInputType(InputType.TYPE_NULL);
+        //EditText etDecValue = findViewById(R.id.etDecValue);
+        //etDecValue.setRawInputType(InputType.TYPE_NULL);
 
         // HEX->DEC
         findViewById(R.id.btnHex2Dec).setOnClickListener((view)->{
